@@ -1,0 +1,27 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('checkout') {
+            steps {
+                git 'https://github.com/biswasak32/terraformrepo.git'
+            }
+        }
+        stage('terraform init') {
+            steps {
+                sh 'terraform init'
+            }
+        }
+                stage('terraform plan') {
+            steps {
+                sh 'terraform plan'
+            }
+        }
+           stage('terraform Action') {
+            steps {
+                echo "terraform action from the parameter is -- > ${action}"
+                sh ("terraform ${action} --auto-approve");
+            }
+        }
+    }
+}
