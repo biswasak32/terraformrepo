@@ -1,5 +1,5 @@
 provider "aws" {
-region = "ap-south-1"
+region = "ap-northeast-1"
 access_key = "AKIAUAPGZ4FSHB44WABP"
 secret_key = "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"
 }
@@ -9,7 +9,7 @@ ami = "ami-06ee4e2261a4dc5c3"
 instance_type = "t2.medium"
   key_name        = "ClassforDevops"
   vpc_security_group_ids = [aws_security_group.three.id]
-  availability_zone = "ap-south-1a"
+  availability_zone = "ap-northeast-1a"
   user_data       = <<EOF
 #!/bin/bash
 sudo -i
@@ -28,7 +28,7 @@ ami = "ami-06ee4e2261a4dc5c3"
 instance_type = "t2.medium"
   key_name        = "ClassforDevops"
   vpc_security_group_ids = [aws_security_group.three.id]
-  availability_zone = "ap-south-1b"
+  availability_zone = "ap-northeast-1b"
   user_data       = <<EOF
 #!/bin/bash
 sudo -i
@@ -44,7 +44,7 @@ Name = "Goldmine-02"
 
 resource "aws_elb" "bar" {
   name               = "akash-terraform-elb"
-  availability_zones = ["ap-south-1a", "ap-south-1b"]
+  availability_zones = ["ap-northeast-1a", "ap-northeast-1"]
 
   listener {
     instance_port     = 80
@@ -79,7 +79,7 @@ resource "aws_s3_bucket" "b" {
 }
 
 resource "aws_ebs_volume" "example" {
-  availability_zone = "ap-south-1a"
+  availability_zone = "ap-northeast-1a"
   size              = 40
 
   tags = {
