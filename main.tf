@@ -1,11 +1,11 @@
 provider "aws" {
 region = "ap-northeast-1"
-access_key = "AKIAUAPGZ4FSHB44WABP"
-secret_key = "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"
+access_key = "********"
+secret_key = "**********"
 }
 
 resource "aws_instance" "one" {
-ami = "ami-06ee4e2261a4dc5c3"
+ami = "************"
 instance_type = "t2.medium"
   key_name        = "ClassforDevops"
   vpc_security_group_ids = [aws_security_group.three.id]
@@ -24,7 +24,7 @@ Name = "Goldmine-01"
 }
 
 resource "aws_instance" "two" {
-ami = "ami-06ee4e2261a4dc5c3"
+ami = "**********"
 instance_type = "t2.medium"
   key_name        = "ClassforDevops"
   vpc_security_group_ids = [aws_security_group.three.id]
